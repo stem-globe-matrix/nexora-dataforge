@@ -446,20 +446,29 @@ requestAnimationFrame(animate);
 
 animate();
 
-  /* VISITOR COUNTER */
+ /* VISITOR COUNTER */
 
-fetch('https://api.countapi.xyz/hit/nexora-dataforge/visits')
-.then(res => res.json())
-.then(res => {
+async function updateVisitors() {
+try {
 
-document.getElementById("visitor-count").innerText = res.value;
+const res = await fetch("https://api.countapi.xyz/hit/nexora-dataforge-site/visits");
+const data = await res.json();
 
-});
+document.getElementById("visitor-count").innerText = data.value;
 
+} catch (error) {
+
+document.getElementById("visitor-count").innerText = "1";
+
+}
+}
+
+updateVisitors();
 </script>
 
 </body>
 </html>
+
 
 
 
