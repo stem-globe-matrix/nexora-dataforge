@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,6 +156,25 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
+/* DOWNLOAD BUTTON */
+
+.download-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+border-radius:8px;
+background:linear-gradient(90deg,#38bdf8,#22d3ee);
+color:#021018;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.download-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #38bdf8;
+}
+
 /* FOOTER */
 
 footer{
@@ -169,69 +188,46 @@ color:#64748b;
 
 <body>
 
-<!-- LOADER -->
-
 <div id="loader">
-
 <div class="loader-ring"></div>
-
 <div id="terminal"></div>
-
 </div>
-
-<!-- NETWORK -->
 
 <canvas id="network"></canvas>
 
-<!-- HERO -->
-
 <div class="hero">
-
 <h1>NEXORA DataForge</h1>
 <h2>Coming Soon</h2>
-
 <p>
 A futuristic research platform providing AI datasets,
 technical resources and scientific knowledge
 for developers and innovators worldwide.
 </p>
-
 </div>
 
 <section>
-
 <h2 class="title">About</h2>
-
 <div class="card">
 NEXORA DataForge is being developed as a research infrastructure
 for hosting curated datasets, research articles and computational
 resources supporting innovation in artificial intelligence,
 robotics and advanced computing.
 </div>
-
 </section>
 
 <section>
-
 <h2 class="title">Our Branches</h2>
-
 <div class="grid">
-
 <div class="card">STEM Globe R&D</div>
 <div class="card">STEM Nucleus</div>
 <div class="card">SGRCI</div>
 <div class="card">NEXORA</div>
-
 </div>
-
 </section>
 
 <section>
-
 <h2 class="title">Team</h2>
-
 <div class="grid">
-
 <div class="card">
 <strong>Naren Hullatti</strong><br>
 Founder & CEO<br>
@@ -255,38 +251,59 @@ STEMtrix
 Technical Team<br>
 STEMtrix
 </div>
-
 </div>
-
 </section>
 
 <section>
-
 <h2 class="title">Message from Founders</h2>
 
 <div class="card">
-
 <strong>Naren Hullatti</strong>
-
 <p>
 NEXORA DataForge represents our vision of an open technological
 infrastructure where knowledge, datasets and research tools
 empower the next generation of innovators to build intelligent systems
 that shape the future of science and technology.
 </p>
-
 </div>
 
 <div class="card">
-
 <strong>Rishith M Naik</strong>
-
 <p>
 Engineering progress is driven by experimentation and meaningful data.
 Through DataForge we aim to build a platform where developers and
 researchers can access structured resources to accelerate discoveries
 in artificial intelligence and advanced computing.
 </p>
+</div>
+
+</section>
+
+<!-- ARTICLES SECTION -->
+
+<section>
+
+<h2 class="title">Research Articles</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Artificial Intelligence Foundations</h3>
+<p>Introduction to modern machine learning systems.</p>
+<a class="download-btn" href="articles/ai-research.pdf" download>Download PDF</a>
+</div>
+
+<div class="card">
+<h3>Quantum Computing Concepts</h3>
+<p>Overview of quantum algorithms and next generation computing.</p>
+<a class="download-btn" href="articles/quantum-computing.pdf" download>Download PDF</a>
+</div>
+
+<div class="card">
+<h3>Modern Robotics Systems</h3>
+<p>Architecture and control systems used in autonomous robotics.</p>
+<a class="download-btn" href="articles/robotics-paper.pdf" download>Download PDF</a>
+</div>
 
 </div>
 
@@ -387,8 +404,6 @@ ctx.stroke();
 
 }
 
-/* CONNECT TO MOUSE */
-
 let mdist=Math.hypot(n.x-mouse.x,n.y-mouse.y);
 
 if(mdist<140){
@@ -411,4 +426,4 @@ animate();
 
 </body>
 </html>
-
+```
