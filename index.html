@@ -444,10 +444,21 @@ requestAnimationFrame(animate);
 
 animate();
 
+  /* VISITOR COUNTER */
+
+fetch('https://api.countapi.xyz/hit/nexora-dataforge/visits')
+.then(res => res.json())
+.then(res => {
+
+document.getElementById("visitor-count").innerText = res.value;
+
+});
+
 </script>
 
 </body>
 </html>
+
 
 
 
