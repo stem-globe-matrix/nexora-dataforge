@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEXORA DataForge</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+font-family:Poppins;
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:40px 40px;
+pointer-events:none;
+z-index:-2;
+}
+
+/* NETWORK CANVAS */
+
+#network{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.loader-ring{
+width:60px;
+height:60px;
+border:4px solid #1e293b;
+border-top:4px solid #38bdf8;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+#terminal{
+font-family:monospace;
+color:#38bdf8;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:Orbitron;
+font-size:60px;
+background:linear-gradient(90deg,#38bdf8,#22d3ee);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+color:#38bdf8;
+margin-top:10px;
+}
+
+.hero p{
+max-width:650px;
+margin-top:20px;
+opacity:0.8;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 12%;
+}
+
+.title{
+font-family:Orbitron;
+color:#38bdf8;
+margin-bottom:30px;
+font-size:28px;
+}
+
+/* GLASS CARDS */
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(14px);
+padding:30px;
+border-radius:14px;
+margin-bottom:25px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:
+0 0 10px #38bdf8,
+0 0 20px #38bdf8,
+0 0 40px rgba(56,189,248,0.6);
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+
+<div class="loader-ring"></div>
+
+<div id="terminal"></div>
+
+</div>
+
+<!-- NETWORK -->
+
+<canvas id="network"></canvas>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>NEXORA DataForge</h1>
+<h2>Coming Soon</h2>
+
+<p>
+A futuristic research platform providing AI datasets,
+technical resources and scientific knowledge
+for developers and innovators worldwide.
+</p>
+
+</div>
+
+<section>
+
+<h2 class="title">About</h2>
+
+<div class="card">
+NEXORA DataForge is being developed as a research infrastructure
+for hosting curated datasets, research articles and computational
+resources supporting innovation in artificial intelligence,
+robotics and advanced computing.
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Our Branches</h2>
+
+<div class="grid">
+
+<div class="card">STEM Globe R&D</div>
+<div class="card">STEM Nucleus</div>
+<div class="card">SGRCI</div>
+<div class="card">NEXORA</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Team</h2>
+
+<div class="grid">
+
+<div class="card">
+<strong>Naren Hullatti</strong><br>
+Founder & CEO<br>
+STEM Globe Matrix
+</div>
+
+<div class="card">
+<strong>Rishith M Naik</strong><br>
+Co-Founder & CTO<br>
+STEM Globe Matrix
+</div>
+
+<div class="card">
+<strong>Srujan S M</strong><br>
+Tech Ops Lead<br>
+STEMtrix
+</div>
+
+<div class="card">
+<strong>Prateek P K</strong><br>
+Technical Team<br>
+STEMtrix
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Message from Founders</h2>
+
+<div class="card">
+
+<strong>Naren Hullatti</strong>
+
+<p>
+NEXORA DataForge represents our vision of an open technological
+infrastructure where knowledge, datasets and research tools
+empower the next generation of innovators to build intelligent systems
+that shape the future of science and technology.
+</p>
+
+</div>
+
+<div class="card">
+
+<strong>Rishith M Naik</strong>
+
+<p>
+Engineering progress is driven by experimentation and meaningful data.
+Through DataForge we aim to build a platform where developers and
+researchers can access structured resources to accelerate discoveries
+in artificial intelligence and advanced computing.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 NEXORA DataForge — STEM Globe Matrix
+</footer>
+
+<script>
+
+/* TERMINAL BOOT */
+
+const messages=[
+"Initializing DataForge Core...",
+"Loading Dataset Index...",
+"Did You Know that STEM Globe Matrix was a startup idea built in the school's Computer Lab...",
+"STEM Globe Creativity and Innovation...",
+"System Ready."
+];
+
+let i=0;
+const term=document.getElementById("terminal");
+
+function type(){
+
+if(i<messages.length){
+term.innerHTML+=messages[i]+"<br>";
+i++;
+setTimeout(type,600);
+}else{
+setTimeout(()=>{document.getElementById("loader").style.display="none"},700);
+}
+
+}
+
+type();
+
+/* NETWORK */
+
+const canvas=document.getElementById("network");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let mouse={x:null,y:null};
+
+window.addEventListener("mousemove",e=>{
+mouse.x=e.x;
+mouse.y=e.y;
+});
+
+let nodes=[];
+
+for(let i=0;i<80;i++){
+
+nodes.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.6,
+vy:(Math.random()-0.5)*0.6
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+for(let i=0;i<nodes.length;i++){
+
+let n=nodes[i];
+
+n.x+=n.vx;
+n.y+=n.vy;
+
+if(n.x<0||n.x>canvas.width)n.vx*=-1;
+if(n.y<0||n.y>canvas.height)n.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(n.x,n.y,2,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+
+for(let j=i+1;j<nodes.length;j++){
+
+let m=nodes[j];
+let dist=Math.hypot(n.x-m.x,n.y-m.y);
+
+if(dist<120){
+ctx.beginPath();
+ctx.moveTo(n.x,n.y);
+ctx.lineTo(m.x,m.y);
+ctx.strokeStyle="rgba(56,189,248,0.15)";
+ctx.stroke();
+}
+
+}
+
+/* CONNECT TO MOUSE */
+
+let mdist=Math.hypot(n.x-mouse.x,n.y-mouse.y);
+
+if(mdist<140){
+ctx.beginPath();
+ctx.moveTo(n.x,n.y);
+ctx.lineTo(mouse.x,mouse.y);
+ctx.strokeStyle="rgba(56,189,248,0.3)";
+ctx.stroke();
+}
+
+}
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
+
